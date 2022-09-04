@@ -104,7 +104,6 @@ function Permission({ closeModal, rowData }) {
         <h3>Product List</h3>
 
         <div className="body">
-
         <BootstrapTable
         rowClasses="row"
         wrapperClasses="table-responsive"
