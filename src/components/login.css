@@ -1,0 +1,48 @@
+.login{
+    display: flex;
+    padding: 20px;
+    width: 40%;
+    margin-top: 70px;
+    margin-left: 100px;
+    box-shadow: 2px 3px 10px 1px rgba(0,0,0,0.5);
+    border-radius: 20px;
+}
+
+.app-layout{
+  display: flex;
+  flex-direction: row;
+}
+
+.signIn{
+  width: 100%;
+  display: flex;
+}
+
+
+.signUp{
+  width: 40%;
+  margin-top: 70px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 3px 10px 1px rgba(0,0,0,0.5);
+  border-radius: 20px;
+  margin-left: 20px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.form input{
+  width:250px;
+  margin: 10px;
+  height:40px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.5);
+  background-color: lavender;
+  padding-left: 18px;
+}

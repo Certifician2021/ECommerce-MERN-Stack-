@@ -1,0 +1,90 @@
+.page{
+    width: 25%;
+    background-color: #282C34;
+    height: 70vh;
+    position: sticky;
+    color: white;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.table-responsive{
+    overflow-x: auto;
+    height: 70%;
+    display: block;
+    border: 1px solid rgba(0,0,0,0.2);
+    width: 100%;
+    border-radius: 10px;
+    
+}
+
+
+.table-responsive thead {
+    background-color: lavender;
+    width: 100%;
+}
+.table-responsive .table-bordered   {
+    width: 100%;
+}
+.table-responsive .table-bordered thead  {
+    text-align: center;
+    height: 40px;
+}
+.table-responsive .table-bordered tbody tr  {
+    /* width: 33%; */
+text-align: center;
+height: 30px;
+border: none !important;
+}
+
+.table-responsive .table-bordered tbody tr td  {
+
+border: none !important;
+}
+.table-responsive .table-bordered tbody .row  {
+    border: none;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.table-responsive .table-bordered thead tr th  {
+border-radius: 8px;
+}
+
+
+
+.sidebar-position{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:60px;
+}
+
+.page:first-child .sidebar-position{
+    margin-top: 33px;
+}
+
+.sidebar-position .link {
+    color: white;
+}
+
+ .page  a {
+    text-decoration: none;
+}
+.access .active-menu .sidebar-position{
+    background-color: white;
+    border-bottom: 3px solid orange;
+    color:black
+
+}
+.access .active-menu .sidebar-position .link{
+    color:black
+
+}
+.sidebar-position:hover {
+    background-color: white;
+    border-bottom: 3px solid orange;
+}
+.sidebar-position:hover .link {
+color: black;
+}
