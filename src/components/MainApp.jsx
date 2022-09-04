@@ -25,8 +25,6 @@ const MainApp = ({ routes }) => {
          <Route path="/products" element={<Products />} />
          <Route path="/add_products" element={<AddProducts />} />
          <Route path="*" element={NotFoundPage} />
-
-
         </Routes>
       </section>
     </div>

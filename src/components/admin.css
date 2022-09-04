@@ -6,6 +6,15 @@
     padding-bottom: 10px;
 }
 
+
+.modalbody{
+    overflow: auto;
+}
+
+.modalbody .table{
+    width:120%
+}
+
 .container1 {
     display: flex;
     flex-direction: column;

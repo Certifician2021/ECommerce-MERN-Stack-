@@ -35,10 +35,13 @@ function Login() {
     e.preventDefault();
     let resp = await axios.post(`http://localhost:8080/login`, credentials);
 
-    if (resp.status == 200) {
+    console.log(resp)
+
+    if (resp.data.success == true) {
       let data = resp.data;
       auth.setToken(data.accessToken);
       auth.setRole(data.role);
+      auth.setUserInfo(data.products)
       setNoti(data.message);
       if (data.role === "Admin") {
         navigate(`/app/users`);

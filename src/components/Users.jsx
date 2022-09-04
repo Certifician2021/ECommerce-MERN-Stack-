@@ -23,7 +23,6 @@ function Users() {
     },[])
 
   const setHandler = (rowIndex) => {
-    console.log("hii")
     setIndex(rowIndex)
     setOpen(true)
   }

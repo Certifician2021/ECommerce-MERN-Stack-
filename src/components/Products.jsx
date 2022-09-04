@@ -13,22 +13,19 @@ function Products() {
     productNames:[]
   })
 
+
+
   const token = auth.getToken();
+
+  const state = auth.getUserInfo()
 
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
 
-  const fetchData = async () => {
-    const resp = await axios.get(`http://localhost:8080/product`, config);
-    setData(resp.data);
-  };
+g
 
-  console.log(data);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
 console.log(cart)
   const cartHandler = (e,price,name) =>{
          setCart({...cart,["count"]:cart.count + 1,["price"]:cart.price + parseInt(price),["productNames"]:cart.productNames.concat(name)})
@@ -45,7 +42,8 @@ console.log(cart)
           </div>
         
         </div>
-        {data.map((item, index) => {
+        <div style={{height:"500px",width:"100%",display:"flex",flexWrap:"wrap"}}>
+        {state.map((item, index) => {
           return (
             <div key={index.toString()} className="item-box">
               <div className="image">
@@ -64,6 +62,8 @@ console.log(cart)
             </div>
           );
         })}
+        </div>
+        
       </div>
     </div>
   );
