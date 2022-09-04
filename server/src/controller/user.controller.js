@@ -77,13 +77,12 @@ exports.givePermission = async (req, res) => {
         message: "Cannot give permissions to User, user doesn't exists.",
       });
     } else {
-      let newProducts = [...userExists.products, ...data.products];
 
       let updatedDb = await db
         .collection("users")
         .updateOne(
           { userID: data.userID, role: "Customer" },
-          { $set: { products: newProducts } }
+          { $set: { products: data.products } }
         );
 
       if (updatedDb.modifiedCount === 0) {
