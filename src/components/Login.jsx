@@ -22,18 +22,23 @@ function Login() {
 
   const submitDetailsHandler = async (e) => {
     e.preventDefault();
-    let resp = await axios.post(`http://localhost:8080/users`, signUpDetails);
-    console.log(resp);
-    if (resp.status == 200) {
-      setNoti(resp.data.message);
-    } else {
-      setNoti("Error");
+    if(signUpDetails.firstName === "" || signUpDetails.lastName === "" || signUpDetails.username === "" || signUpDetails.password === ""){
+      alert("Please Enter Correct Data")
+    }else{
+      let resp = await axios.post(`/users`, signUpDetails);
+      console.log(resp);
+      if (resp.status == 200) {
+        setNoti(resp.data.message);
+      } else {
+        setNoti("Error");
+      }
     }
+ 
   };
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    let resp = await axios.post(`http://localhost:8080/login`, credentials);
+    let resp = await axios.post(`/login`, credentials);
 
     console.log(resp)
 
@@ -41,11 +46,11 @@ function Login() {
       let data = resp.data;
       auth.setToken(data.accessToken);
       auth.setRole(data.role);
-      auth.setUserInfo(data.products)
       setNoti(data.message);
       if (data.role === "Admin") {
         navigate(`/app/users`);
       } else {
+        auth.setUserInfo(data.products)
         navigate("/app/products");
       }
     } else {

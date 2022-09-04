@@ -13,7 +13,7 @@ function Users() {
 
  
     const fetchData = async() => {
-      const resp = await axios.get(`http://localhost:8080/users`)
+      const resp = await axios.get(`/users`)
       console.log(resp)
       setData(resp.data)
     }

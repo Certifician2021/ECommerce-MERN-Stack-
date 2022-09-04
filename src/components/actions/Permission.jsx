@@ -18,7 +18,7 @@ function Permission({ closeModal, rowData }) {
   console.log(formValue)
 
   const fetchData = async () => {
-    const resp = await axios.get(`http://localhost:8080/product`, config);
+    const resp = await axios.get(`/product`, config);
     setData(resp.data)
  
    
@@ -45,7 +45,7 @@ function Permission({ closeModal, rowData }) {
   };
 
   const submitRequest = async() => {
-    const resp = await axios.post(`http://localhost:8080/users/permission`,{
+    const resp = await axios.post(`/users/permission`,{
       userID:rowData.userID,
       products:formValue
     },config)  

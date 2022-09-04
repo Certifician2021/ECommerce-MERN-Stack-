@@ -21,7 +21,7 @@ const config = {
 };
 
   const submitHandler = async () => {
-     const resp = await axios.post(`http://localhost:8080/product`,details,config)
+     const resp = await axios.post(`/product`,details,config)
      if(resp.data.success){
         setSuccessNoti(resp.data.message)
         setDetails({
@@ -88,17 +88,14 @@ const config = {
         </div>
         <div style={{display:"flex",flexDirection:"column",margin:"10px"}}>
         <label style={{margin:"10px"}}>Product Category :</label>
-        <select
-        type="number"
+        <input
+        type="text"
         className='input'
         value={details.productCategory}
         name='productCategory' 
         onChange={(e)=>{setDetails({...details,[e.target.name]:e.target.value})}}
-        >
-          <option value="Electronics">Electronics</option>
-          <option value="Books">Books</option>
-          <option value="Wooden">Wooden</option>
-        </select>
+        />
+       
         </div>
        
       </form>
