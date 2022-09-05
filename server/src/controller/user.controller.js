@@ -103,7 +103,13 @@ exports.givePermission = async (req, res) => {
 
 exports.getAllUsers = async(req, res) => {
   const db = mongoUtil.getDb();
-    const users = await db.collection('users').find({role:"Customer"}).project({_id:0,password:0}).toArray();
+
+  const filterObj = {
+    firstName: req.query.firstName ? new RegExp(req.query.firstName,'i') : /[a-z]+/i,
+    username: req.query.username ? new RegExp(req.query.username,'i') : /[a-z0-9]+/i,
+  };
+
+    const users = await db.collection('users').find(filterObj,{role:"Customer"}).project({_id:0,password:0}).toArray();
     if(!users){
       console.log("######### No Users Found ########");
       res.status(404).send({success:false,message:"No Users Found at this moment"})

@@ -33,7 +33,12 @@ exports.getAllProducts = async (req, res) => {
   console.log("############# In getAllProducts Route ##############");
   let db = mongoUtil.getDb();
 
-  let products = await db.collection("products").find({}).project({_id:0}).toArray();
+  const filterObj = {
+    productName: req.query.productName ? new RegExp(req.query.productName,'i') : /[a-z0-9]+/i,
+    productCategory: req.query.productCategory ? new RegExp(req.query.productCategory,'i') : /[a-z0-9]+/i,
+  };
+
+  let products = await db.collection("products").find(filterObj).project({_id:0}).toArray();
 
   if (products === []) {
     res.status(404).send({ success: false, message: "No Products found." });

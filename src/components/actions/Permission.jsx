@@ -43,6 +43,7 @@ function Permission({ closeModal, rowData }) {
     
     }
   };
+  console.log(formValue)
 
   const submitRequest = async() => {
     const resp = await axios.post(`/users/permission`,{
